@@ -1,0 +1,153 @@
+@import "compass/css3/user-interface"
+
+html, body
+  height: 100%
+  padding: 0
+  margin: 0
+
+html
+  font-family: 'Roboto Slab'
+  font-size: 13px
+
+body
+  font-size: 120%
+  +user-select(none)
+  cursor: default
+
+#container
+  margin: 0 auto
+  width: 800px
+  padding: 70px
+
+a
+  text-decoration: none
+
+.hidden
+  display: none !important
+
+/*------------------------ .block, .content, .tag ------------------------*/
+
+.block
+  margin: 16px 0
+
+  & .content, .tag
+    display: inline-block
+    line-height: 70px
+
+  & .content
+    color: #505050
+    padding: 0 12px
+
+  & .tag
+    color: white
+    padding: 0 10px
+    background: #349683
+
+    &:before
+      content: '<'
+
+    &:after
+      content: '>'
+
+  & .detail.block
+    display: none
+
+  & ul
+    list-style-type: none
+    margin: 0
+    padding: 0 0 0 30px
+  
+  & .email
+    +user-select(text)
+    
+  &.styled
+    & .detail.block
+      display: block
+
+    & ul
+      padding-left: 30px
+
+      &.dashed-list
+        & li
+          & .content:before
+            content: ' '
+            display: inline-block
+            height: 15px
+            width: 15px
+            margin: 0 15px 0 0
+            background: #5e5e5e
+
+    & .content
+      margin: 0
+      font-size: 120%
+
+    & .detail.content
+      background-color: rgba(255, 255, 255, 0.25)
+      display: inline-block
+      padding: 0 20px
+      margin-left: 10px
+
+    & .tag
+      display: none
+    
+    & .link.content
+      background: #589CDA
+      color: white
+      cursor: pointer
+      &:hover
+        background: #5e5e5e
+
+    &#welcome
+      & .content
+        font-weight: bold
+        font-size: 300% 
+        color: white
+        background: #494949
+        padding: 30px
+    
+    &#contact-me
+      & .content
+        background: #F17176
+        color: white
+
+/*------------------------ controls ------------------------*/
+
+#controls
+  position: fixed
+  right: 100px
+  top: 86px
+
+.control
+  opacity: 0.1
+  font-size: 160%
+  color: white
+  line-height: 70px
+  padding: 0 20px
+  float: left
+  background: #589CDA
+
+  &.active
+    opacity: 1
+    cursor: pointer
+
+/*------------------------ Media queries ------------------------*/
+
+@media all and (max-width: 420px)
+  .contact-me-at
+    display: none
+  
+  #controls
+    right: 50px
+
+  ul
+    padding-left: 10px !important 
+
+@media all and (max-width: 760px)
+  #container
+    padding: 10px
+
+  #controls
+    top: 26px
+
+  .detail.content
+    display: none !important
