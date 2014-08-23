@@ -7,7 +7,7 @@ module.exports = (function() {
   
   var addBlockTween = function(id) {
     var $el = $('#' + id);
-    var tween = TweenMax.to($el, .02, {
+    var tween = TweenMax.to($el, 0.02, {
       className: '+=styled',
       ease: Power1.easeOut,  
     });
