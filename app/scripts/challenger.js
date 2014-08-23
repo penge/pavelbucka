@@ -17,7 +17,7 @@ module.exports = (function() {
         return;
       }
       _welcomeClicks += 1;
-      if (_welcomeClicks % 10 == 0) {
+      if (_welcomeClicks % 10 === 0) {
         _round += 1;
         Animator.reset(_round);
       }
@@ -27,7 +27,7 @@ module.exports = (function() {
   var startRoundChallenge = function () {
     setInterval(function () {
       var localRound = _round; 
-      if (localRound % 5 == 0 && Element.isStyled($('#welcome'))) {
+      if (localRound % 5 === 0 && Element.isStyled($('#welcome'))) {
         $('#welcome-content').text('Can you do more?');
         setTimeout(function () {
           if (localRound == _round) {

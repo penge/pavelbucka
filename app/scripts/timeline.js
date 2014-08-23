@@ -1,14 +1,14 @@
 module.exports = {
   hasNoCurrentLabel: function(timeline) {
-    return timeline.currentLabel() == null;
+    return timeline.currentLabel() === null;
   },
   
   hasNoLabelBefore: function(timeline) {
-    return timeline.getLabelBefore() == null;
+    return timeline.getLabelBefore() === null;
   },
   
   hasNoLabelAfter: function(timeline) {
-    return timeline.getLabelAfter() == null;
+    return timeline.getLabelAfter() === null;
   },
 
   gotoLabelBeforeAndStop: function(timeline) {
