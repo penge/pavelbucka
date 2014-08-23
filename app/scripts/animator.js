@@ -1,6 +1,6 @@
 var DocumentSuffixer = require('./documentSuffixer.js');
-var Timeline = require('./timeline.js');
 var Element = require('./element.js');
+var Timeline = require('./timeline.js');
 
 module.exports = (function() {
   var _timeline = null;
