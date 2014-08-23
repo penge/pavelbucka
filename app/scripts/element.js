@@ -14,4 +14,12 @@ module.exports = {
   isUnstyled: function($el) {
     return !$el.hasClass('styled');
   },
+
+  hide: function($el) {
+    $el.addClass('hidden');
+  },
+  
+  show: function($el) {
+    $el.removeClass('hidden');
+  },
 };
