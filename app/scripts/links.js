@@ -8,7 +8,7 @@ module.exports = (function() {
     $('span.link.content').click(function () {
       var $content = $(this);
       if ($content.closest('.block').hasClass('styled')) {
-        $target = $($content.data('target'));
+        var $target = $($content.data('target'));
         $('.detail.block').not($target).addClass('hidden');
         $target.toggleClass('hidden');
       }
