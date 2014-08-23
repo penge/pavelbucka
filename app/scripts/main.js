@@ -5,8 +5,8 @@ var Challenger = require('./challenger');
 
 $(function() {
   Controls.register(
-    $('#rewind-control'),
-    $('#forward-control')
+    $('#rewind'),
+    $('#forward')
   );
   Links.register();
   Animator.animate();

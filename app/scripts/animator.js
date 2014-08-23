@@ -28,11 +28,14 @@ module.exports = (function() {
     addBlockTween('contact-me'); 
     
     _timeline.call(function() {
-      $('#controls').removeClass('hidden');
+      Element.activate($('#rewind'));  
+      Element.deactivate($('#forward'));
+      Element.show($('.control'));
     });
   };
   
   var reset = function(round) {
+    Element.hide($('.control'));
     DocumentSuffixer.suffixWelcomeContent(round);
     _timeline.gotoAndStop('welcome');
     TweenMax.delayedCall(1.8, function() {
