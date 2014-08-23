@@ -1,3 +1,5 @@
+/* global TweenMax, TimelineMax, Power1 */
+
 var DocumentSuffixer = require('./documentSuffixer.js');
 var Element = require('./element.js');
 var Timeline = require('./timeline.js');
