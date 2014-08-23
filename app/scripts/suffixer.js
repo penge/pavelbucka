@@ -1,3 +1,5 @@
+'use strict';
+
 module.exports = (function () {
   var ordinalSuffixOf = function (number) {
     var j = number % 10;

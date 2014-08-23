@@ -1,3 +1,5 @@
+'use strict';
+
 var Animator = require('./animator.js');
 
 module.exports = (function() { 

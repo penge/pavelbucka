@@ -1,3 +1,5 @@
+'use strict';
+
 var Suffixer = require('./suffixer.js');
 
 module.exports = {

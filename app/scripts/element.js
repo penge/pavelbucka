@@ -1,3 +1,5 @@
+'use strict';
+
 module.exports = {
   activate: function($el) {
     $el.addClass('active');

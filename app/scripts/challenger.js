@@ -1,3 +1,5 @@
+'use strict';
+
 var Element = require('./element.js');
 var Animator = require('./animator.js');
 var DocumentSuffixer = require('./documentSuffixer.js');

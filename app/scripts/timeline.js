@@ -1,3 +1,5 @@
+'use strict';
+
 module.exports = {
   hasNoCurrentLabel: function(timeline) {
     return timeline.currentLabel() === null;

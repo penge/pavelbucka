@@ -1,3 +1,5 @@
+'use strict';
+
 var Controls = require('./controls.js');
 var Links = require('./links.js');
 var Animator = require('./animator.js'); 

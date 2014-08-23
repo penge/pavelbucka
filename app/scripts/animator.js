@@ -1,3 +1,5 @@
+'use strict';
+
 /* global TweenMax, TimelineMax, Power1 */
 
 var DocumentSuffixer = require('./documentSuffixer.js');
