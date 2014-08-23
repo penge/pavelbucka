@@ -1,0 +1,9 @@
+{
+  "curly": true,
+  "indent": 2,
+  "jquery": true,
+  "node": true,
+  "strict": true,
+  "undef": true,
+  "unused": "vars"
+}
