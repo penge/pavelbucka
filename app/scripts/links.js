@@ -9,8 +9,9 @@ module.exports = (function() {
   var registerSpanLinks = function () {
     $('span.link.content').click(function () {
       var $content = $(this);
-      if ($content.closest('.block').hasClass('styled')) {
-        var $target = $($content.data('target'));
+      var $closestBlock = $content.closest('.block');
+      if ($closestBlock.hasClass('styled')) {
+        var $target = $closestBlock.find('.detail.block'); 
         $('.detail.block').not($target).addClass('hidden');
         $target.toggleClass('hidden');
       }
