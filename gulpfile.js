@@ -41,7 +41,7 @@ gulp.task('styles', function () {
 });
 
 gulp.task('jshint', function() {
-  return gulp.src('./app/**/*.js')
+  return gulp.src('./app/scripts/**/*.js')
     .pipe(jshint())
     .pipe(jshint.reporter('jshint-stylish'));
 });
