@@ -6,6 +6,7 @@ var //var
   cleanhtml      = require('gulp-cleanhtml'),
   compass        = require('gulp-compass'),
   gulp           = require('gulp'),
+  jade           = require('gulp-jade'),
   jshint         = require('gulp-jshint'),
   reload         = browserSync.reload,
   rename         = require('gulp-rename'),
@@ -24,6 +25,19 @@ gulp.task('browser-sync', function() {
 gulp.task('htmls', function () {
   return gulp.src('./app/*.html')
     .pipe(cleanhtml())
+    .pipe(gulp.dest('./dist'));
+});
+
+var reloadFile = function(path) {
+  delete require.cache[require.resolve(path)];
+  return require(path);
+};
+
+gulp.task('templates', function () {
+  return gulp.src('./app/templates/**/*.jade')
+    .pipe(jade({
+      locals: reloadFile('./app/scripts/jade/locals.js') 
+    }))
     .pipe(gulp.dest('./dist'));
 });
 
@@ -52,14 +66,17 @@ gulp.task('scripts', ['jshint'], function() {
 });
 
 gulp.task('default', ['browser-sync'], function () {
-  runSequence(['htmls', 'styles', 'scripts']);
+  runSequence(['htmls', 'templates', 'styles', 'scripts']);
 
   gulp.watch('./app/*.html',
     ['htmls', reload]);
+ 
+  gulp.watch('./app/templates/**/*.jade',
+    ['templates', reload]);
  
   gulp.watch('./app/styles/**/*.sass',
     ['styles', reload]);
 
   gulp.watch('./app/scripts/**/*.js',
-    ['scripts', reload]);
+    ['scripts', 'templates', reload]);
 });
