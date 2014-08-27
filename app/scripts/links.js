@@ -2,12 +2,12 @@
 
 module.exports = (function() {
   var register = function () {
-    registerSpanLinks();
+    registerDivLinks();
     registerALinks();
   };
 
-  var registerSpanLinks = function () {
-    $('span.link.content').click(function () {
+  var registerDivLinks = function () {
+    $('div.content.link').click(function () {
       var $content = $(this);
       var $closestBlock = $content.closest('.block');
       if ($closestBlock.hasClass('styled')) {
@@ -19,10 +19,10 @@ module.exports = (function() {
   };
 
   var registerALinks = function () {
-    $('a.link.content').hover(function () {
+    $('a.content.link').hover(function () {
       var $content = $(this);
-      var $detailToToggle = $content.siblings('.detail.content');
-      $('.detail.content').not($detailToToggle).addClass('hidden');
+      var $detailToToggle = $content.siblings('.content.detail');
+      $('.content.detail').not($detailToToggle).addClass('hidden');
       $detailToToggle.toggleClass('hidden');
     });
   };

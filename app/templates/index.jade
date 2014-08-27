@@ -1,0 +1,83 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(name='author', content=author)
+    meta(name='description', content=description)
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    title= author
+    link(rel='stylesheet', type='text/css', href=links.robotoSlab)
+    link(rel='stylesheet', type='text/css', href=links.main)
+  body
+    #container
+      #welcome.block
+        .tag= '<h1>'
+        .content#welcome-content Hello! 
+        .tag= '</h1>'
+
+      #developer.block
+        .tag= '<p id="developer">'
+        .content I'm #{author}, I can help you to: 
+        .tag= '</p>'
+
+      #help.block
+        .tag= '<ul id="help-list">'
+        ul.dashed-list
+          each help in helps 
+            li
+              .block
+                .tag= '<li>'
+                .content= help
+                .tag= '</li>'
+        .tag= '</ul>'
+
+      #hire-me.block
+        .tag= '<p id="hire-me">'
+        .content.link #{reasons.length} reasons why should you hire me
+        .tag= '</p>'
+        #hire-me-detail.hidden.detail.styled.block
+          ul
+            each reason in reasons
+              li
+                .block
+                  .content= reason
+                  
+      #projects.block
+        .tag= '<p id="projects">'
+        .content.link See my own projects
+        .tag= '</p>'
+        #projects-detail.hidden.detail.styled.block
+          ul
+            each project in projects
+              li
+                .block
+                  a.content.link(target='_blank', href=project.url)= project.name
+                  .hidden.content.detail= project.desc
+
+      #work.block
+        .tag= '<p id="work">'
+        .content.link See my work experiences
+        .tag= '</p>'
+        #work.detail.hidden.detail.styled.block
+          ul
+            each work in works
+              li
+                .block
+                  a.content.link(target='_blank', href=work.url)= work.name
+                  .hidden.content.detail= work.desc
+
+      #contact-me.block
+        .tag= '<p id="contact-me">'
+        .content
+          span.contact-me-at= 'Contact me at: ' 
+          span.email= email
+        .tag= '</p>'
+
+  #controls
+    #rewind.hidden.control <
+    #forward.hidden.control >
+
+  script(src=links.jquery)
+  script(src=links.tweenMax)
+  script(src=links.bundle)
+    include ../scripts/jade/ga.js
