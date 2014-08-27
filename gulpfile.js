@@ -7,6 +7,7 @@ var //var
   compass        = require('gulp-compass'),
   gulp           = require('gulp'),
   jshint         = require('gulp-jshint'),
+  reload         = browserSync.reload,
   rename         = require('gulp-rename'),
   runSequence    = require('run-sequence'),
   uglify         = require('gulp-uglify');
@@ -18,10 +19,6 @@ gulp.task('browser-sync', function() {
       baseDir: 'dist'
     }
   });
-});
-
-gulp.task('reload', function () {
-  browserSync.reload();
 });
 
 gulp.task('htmls', function () {
@@ -58,11 +55,11 @@ gulp.task('default', ['browser-sync'], function () {
   runSequence(['htmls', 'styles', 'scripts']);
 
   gulp.watch('./app/*.html',
-    ['htmls', 'reload']);
+    ['htmls', reload]);
  
   gulp.watch('./app/styles/**/*.sass',
-    ['styles', 'reload']);
+    ['styles', reload]);
 
   gulp.watch('./app/scripts/**/*.js',
-    ['scripts', 'reload']);
+    ['scripts', reload]);
 });
