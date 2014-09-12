@@ -38,6 +38,11 @@ var locals = {
       desc: "monitors' energy saver",
       url: "http://www.stahuj.centrum.cz/utility_a_ostatni/zjednoduseni_prace/ostatni/monitoroff",
     },
+    {
+      name: "Slide",
+      desc: "custom sliding content creator",
+      url: "http://slide.pavelbucka.com",
+    },
   ],
   works: [
     {
