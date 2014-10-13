@@ -9,18 +9,18 @@ html
     link(rel='stylesheet', type='text/css', href=links.robotoSlab)
     link(rel='stylesheet', type='text/css', href=links.main)
   body
-    #container
-      #welcome.block
+    #container.invisible
+      #welcome.block.styled
         .tag= '<h1>'
         .content#welcome-content Hello!
         .tag= '</h1>'
 
-      #developer.block
+      #developer.block.styled
         .tag= '<p id="developer">'
         .content I'm #{author}, I can help you to:
         .tag= '</p>'
 
-      #help.block
+      #help.block.styled
         .tag= '<ul id="help-list">'
         ul.dashed-list
           each help in helps 
@@ -31,22 +31,22 @@ html
                 .tag= '</li>'
         .tag= '</ul>'
 
-      #hire-me.block
+      #hire-me.block.styled
         .tag= '<p id="hire-me">'
         .content.link #{reasons.length} reasons why should you hire me
         .tag= '</p>'
-        #hire-me-detail.hidden.detail.styled.block
+        #hire-me-detail.hidden.detail.block.styled
           ul
             each reason in reasons
               li
                 .block
                   .content= reason
                   
-      #projects.block
+      #projects.block.styled
         .tag= '<p id="projects">'
         .content.link See my own projects
         .tag= '</p>'
-        #projects-detail.hidden.detail.styled.block
+        #projects-detail.hidden.detail.block.styled
           ul
             each project in projects
               li
@@ -54,11 +54,11 @@ html
                   a.content.link(target='_blank', href=project.url)= project.name
                   .hidden.content.detail= project.desc
 
-      #work.block
+      #work.block.styled
         .tag= '<p id="work">'
         .content.link See my work experiences
         .tag= '</p>'
-        #work.detail.hidden.detail.styled.block
+        #work.detail.hidden.detail.block.styled
           ul
             each work in works
               li
@@ -66,7 +66,7 @@ html
                   a.content.link(target='_blank', href=work.url)= work.name
                   .hidden.content.detail= work.desc
 
-      #contact-me.block
+      #contact-me.block.styled
         .tag= '<p id="contact-me">'
         .content
           span.contact-me-at= 'Contact me at: '
